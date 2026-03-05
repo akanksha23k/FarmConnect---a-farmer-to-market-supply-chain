@@ -92,7 +92,7 @@ class Farmer {
             stmt.setInt(4, quantity);
             stmt.setInt(5, this.farmerId);
             stmt.executeUpdate();
-            System.out.println("✅ Product added successfully!");
+            System.out.println("Product added successfully!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -216,12 +216,12 @@ class Buyer {
                 double price = rs.getDouble("price");
                 if (qty <= 0) 
                 {
-                    System.out.println("❌ Invalid quantity!");
+                    System.out.println("Invalid quantity!");
                     return;
                 }
                 if (stock < qty) 
                 {
-                    System.out.println("❌ Out of stock!");
+                    System.out.println("Out of stock!");
                     return;
                 }
                 double total = price * qty;
@@ -240,10 +240,10 @@ class Buyer {
                 updateStmt.setInt(2, productId);
                 updateStmt.executeUpdate();
 
-                System.out.println("✅ Order placed successfully! Total = " + total);
+                System.out.println("Order placed successfully! Total = " + total);
             } else 
             {
-                System.out.println("❌ Product not found!");
+                System.out.println("Product not found!");
             }
         } 
         catch (SQLException e)
@@ -349,3 +349,4 @@ public class FarmConnect
         sc.close();
     }
 }
+
